@@ -1,0 +1,129 @@
+g++ -rdynamic -Wl,--no-as-needed -ldl -L./lib -L/usr/lib/ -I/usr/include -I./ -o test_openolt completion_queue_pool.o completion_queue_thread.o event_queue_thread.o rpc.o server.o service.o common/time.o -lpthread -lm `pkg-config --libs protobuf grpc++ grpc` -ldl -lgpr
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 0 has invalid symbol index 11
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 1 has invalid symbol index 12
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 2 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 3 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 4 has invalid symbol index 11
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 5 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 6 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 7 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 8 has invalid symbol index 12
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 9 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 10 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 11 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 12 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 13 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 14 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 15 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 16 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 17 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 18 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 19 has invalid symbol index 21
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_line): relocation 0 has invalid symbol index 2
+/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+completion_queue_pool.o: In function `async_grpc::CompletionQueue::Shutdown()':
+/home/cord/ggc/async_grpc/completion_queue_pool.cc:38: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/completion_queue_pool.cc:38: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/completion_queue_pool.cc:38: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+completion_queue_pool.o: In function `async_grpc::CompletionQueue::Start()':
+/home/cord/ggc/async_grpc/completion_queue_pool.cc:32: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/completion_queue_pool.cc:32: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/completion_queue_pool.cc:32: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+completion_queue_pool.o: In function `async_grpc::CompletionQueuePool::SetNumberCompletionQueues(unsigned long)':
+/home/cord/ggc/async_grpc/completion_queue_pool.cc:62: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/completion_queue_pool.cc:62: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/completion_queue_pool.cc:64: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+/home/cord/ggc/async_grpc/completion_queue_pool.cc:64: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int, google::CheckOpString const&)'
+/home/cord/ggc/async_grpc/completion_queue_pool.cc:64: undefined reference to `google::LogMessage::stream()'
+completion_queue_pool.o: In function `std::string* google::MakeCheckOpString<unsigned long, unsigned int>(unsigned long const&, unsigned int const&, char const*)':
+/usr/local/include/glog/logging.h:692: undefined reference to `google::base::CheckOpMessageBuilder::CheckOpMessageBuilder(char const*)'
+/usr/local/include/glog/logging.h:694: undefined reference to `google::base::CheckOpMessageBuilder::ForVar2()'
+/usr/local/include/glog/logging.h:695: undefined reference to `google::base::CheckOpMessageBuilder::NewString()'
+/usr/local/include/glog/logging.h:695: undefined reference to `google::base::CheckOpMessageBuilder::~CheckOpMessageBuilder()'
+/usr/local/include/glog/logging.h:695: undefined reference to `google::base::CheckOpMessageBuilder::~CheckOpMessageBuilder()'
+completion_queue_thread.o: In function `async_grpc::CompletionQueueThread::Start(std::function<void (grpc::ServerCompletionQueue*)>)':
+/home/cord/ggc/async_grpc/completion_queue_thread.cc:33: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/completion_queue_thread.cc:33: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/completion_queue_thread.cc:33: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+event_queue_thread.o: In function `async_grpc::EventQueueThread::Start(std::function<void (async_grpc::common::BlockingQueue<std::unique_ptr<async_grpc::Rpc::EventBase, async_grpc::Rpc::EventDeleter> >*)>)':
+/home/cord/ggc/async_grpc/event_queue_thread.cc:31: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/event_queue_thread.cc:31: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/event_queue_thread.cc:31: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+rpc.o: In function `async_grpc::Rpc::PerformWrite(std::unique_ptr<google::protobuf::Message, std::default_delete<google::protobuf::Message> >, grpc::Status)':
+/home/cord/ggc/async_grpc/rpc.cc:296: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/rpc.cc:296: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/rpc.cc:298: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+/home/cord/ggc/async_grpc/rpc.cc:298: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int, google::CheckOpString const&)'
+/home/cord/ggc/async_grpc/rpc.cc:299: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/rpc.cc:297: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int, google::CheckOpString const&)'
+/home/cord/ggc/async_grpc/rpc.cc:297: undefined reference to `google::LogMessage::stream()'
+rpc.o: In function `async_grpc::ActiveRpcs::Add(std::unique_ptr<async_grpc::Rpc, std::default_delete<async_grpc::Rpc> >)':
+/home/cord/ggc/async_grpc/rpc.cc:362: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/rpc.cc:362: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/rpc.cc:362: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+rpc.o: In function `async_grpc::ActiveRpcs::GetWeakPtr(async_grpc::Rpc*)':
+/home/cord/ggc/async_grpc/rpc.cc:383: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/rpc.cc:383: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/rpc.cc:383: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+rpc.o: In function `async_grpc::Rpc::PerformFinish(std::unique_ptr<google::protobuf::Message, std::default_delete<google::protobuf::Message> >, grpc::Status)':
+/home/cord/ggc/async_grpc/rpc.cc:288: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/rpc.cc:288: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/rpc.cc:288: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+/home/cord/ggc/async_grpc/rpc.cc:274: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/rpc.cc:274: undefined reference to `google::LogMessage::stream()'
+rpc.o: In function `std::string* google::MakeCheckOpString<grpc::internal::RpcMethod::RpcType, grpc::internal::RpcMethod::RpcType>(grpc::internal::RpcMethod::RpcType const&, grpc::internal::RpcMethod::RpcType const&, char const*)':
+/usr/local/include/glog/logging.h:692: undefined reference to `google::base::CheckOpMessageBuilder::CheckOpMessageBuilder(char const*)'
+/usr/local/include/glog/logging.h:694: undefined reference to `google::base::CheckOpMessageBuilder::ForVar2()'
+/usr/local/include/glog/logging.h:695: undefined reference to `google::base::CheckOpMessageBuilder::NewString()'
+/usr/local/include/glog/logging.h:695: undefined reference to `google::base::CheckOpMessageBuilder::~CheckOpMessageBuilder()'
+/usr/local/include/glog/logging.h:695: undefined reference to `google::base::CheckOpMessageBuilder::~CheckOpMessageBuilder()'
+server.o: In function `async_grpc::Server::Builder::ParseMethodFullName(std::string const&)':
+/home/cord/ggc/async_grpc/server.cc:73: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/server.cc:73: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/server.cc:73: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+/home/cord/ggc/async_grpc/server.cc:67: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/server.cc:67: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/server.cc:67: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+server.o: In function `async_grpc::Server::SetExecutionContext(std::unique_ptr<async_grpc::ExecutionContext, std::default_delete<async_grpc::ExecutionContext> >)':
+/home/cord/ggc/async_grpc/server.cc:215: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/server.cc:215: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/server.cc:215: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+server.o: In function `async_grpc::Server::Builder::SetMaxReceiveMessageSize(int)':
+/home/cord/ggc/async_grpc/server.cc:44: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int, google::CheckOpString const&)'
+/home/cord/ggc/async_grpc/server.cc:44: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/server.cc:44: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+server.o: In function `async_grpc::Server::Builder::SetMaxSendMessageSize(int)':
+/home/cord/ggc/async_grpc/server.cc:49: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int, google::CheckOpString const&)'
+/home/cord/ggc/async_grpc/server.cc:49: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/server.cc:49: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+server.o: In function `async_grpc::Server::AddService(std::string const&, std::map<std::string, async_grpc::RpcHandlerInfo, std::less<std::string>, std::allocator<std::pair<std::string const, async_grpc::RpcHandlerInfo> > > const&)':
+/home/cord/ggc/async_grpc/server.cc:112: undefined reference to `google::LogMessageFatal::LogMessageFatal(char const*, int)'
+/home/cord/ggc/async_grpc/server.cc:112: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/server.cc:112: undefined reference to `google::LogMessageFatal::~LogMessageFatal()'
+server.o: In function `std::string* google::MakeCheckOpString<int, int>(int const&, int const&, char const*)':
+/usr/local/include/glog/logging.h:692: undefined reference to `google::base::CheckOpMessageBuilder::CheckOpMessageBuilder(char const*)'
+/usr/local/include/glog/logging.h:694: undefined reference to `google::base::CheckOpMessageBuilder::ForVar2()'
+/usr/local/include/glog/logging.h:695: undefined reference to `google::base::CheckOpMessageBuilder::NewString()'
+/usr/local/include/glog/logging.h:695: undefined reference to `google::base::CheckOpMessageBuilder::~CheckOpMessageBuilder()'
+/usr/local/include/glog/logging.h:695: undefined reference to `google::base::CheckOpMessageBuilder::~CheckOpMessageBuilder()'
+service.o: In function `async_grpc::Service::HandleWrite(async_grpc::Rpc*, bool)':
+/home/cord/ggc/async_grpc/service.cc:119: undefined reference to `google::LogMessage::LogMessage(char const*, int, int)'
+/home/cord/ggc/async_grpc/service.cc:119: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/service.cc:119: undefined reference to `google::LogMessage::~LogMessage()'
+/home/cord/ggc/async_grpc/service.cc:119: undefined reference to `google::LogMessage::~LogMessage()'
+service.o: In function `async_grpc::Service::HandleFinish(async_grpc::Rpc*, bool)':
+/home/cord/ggc/async_grpc/service.cc:130: undefined reference to `google::LogMessage::LogMessage(char const*, int, int)'
+/home/cord/ggc/async_grpc/service.cc:130: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/service.cc:130: undefined reference to `google::LogMessage::~LogMessage()'
+/home/cord/ggc/async_grpc/service.cc:130: undefined reference to `google::LogMessage::~LogMessage()'
+service.o: In function `async_grpc::Service::HandleNewConnection(async_grpc::Rpc*, bool)':
+/home/cord/ggc/async_grpc/service.cc:82: undefined reference to `google::LogMessage::LogMessage(char const*, int, int)'
+/home/cord/ggc/async_grpc/service.cc:82: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/service.cc:82: undefined reference to `google::LogMessage::~LogMessage()'
+/home/cord/ggc/async_grpc/service.cc:89: undefined reference to `google::LogMessage::LogMessage(char const*, int, int)'
+/home/cord/ggc/async_grpc/service.cc:89: undefined reference to `google::LogMessage::stream()'
+/home/cord/ggc/async_grpc/service.cc:89: undefined reference to `google::LogMessage::~LogMessage()'
+/home/cord/ggc/async_grpc/service.cc:89: undefined reference to `google::LogMessage::~LogMessage()'
+collect2: error: ld returned 1 exit status
+make: *** [build] Error 1
